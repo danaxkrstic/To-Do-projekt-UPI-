@@ -39,7 +39,7 @@
     
 <?php
 
-    include("database.php");
+    include("pomocne_funkcije.php");
 
     if (isset($_POST["submit_signup"])) {
 
