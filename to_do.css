@@ -1,0 +1,26 @@
+.container{
+    background-color: yellow;
+}
+
+.header{
+    background-color: red;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer{
+    background-color:green;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.task{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: pink;
+}
