@@ -12,6 +12,5 @@ function isValidEmail($email) {
 
     return preg_match($emailRegex, $email);
 }
-  
 
 ?>

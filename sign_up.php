@@ -41,6 +41,8 @@
 
     include("pomocne_funkcije.php");
 
+    session_start();
+
     if (isset($_POST["submit_signup"])) {
 
         $username = $_POST['username'];
@@ -58,6 +60,14 @@
                 $upit = "INSERT INTO user(email,username,passw) VALUES('$email', '$username', '$password')";
 
                 $rezupit = mysqli_query($con, $upit);
+
+                
+
+                $_SESSION["username"] = $username;
+                $_SESSION["email"] = $email;
+
+                header("location: to_do.php");
+                exit();
 
             }
             else{
