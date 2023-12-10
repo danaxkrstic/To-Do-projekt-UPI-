@@ -5,7 +5,7 @@
 }
 
 .item-completed:checked + .item-description {
-    background: #dddddd;
+    background: #a7b1ae;
     text-decoration: line-through;
 }
 
@@ -15,4 +15,26 @@
     color: #ffffff;
     background: #009578;
     cursor: pointer;
+}
+
+.item {
+    text-align: center;
+}
+
+.addItem {
+    text-align: center;
+}
+
+body {
+    background-color: rgba(8, 152, 209, 0.627);
+    background-image: url(https://images.freeimages.com/clg/istock/previews/8604/86040235-todo-list-seamless-pattern-universal-background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 70px;
 }

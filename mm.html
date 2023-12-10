@@ -9,14 +9,17 @@
     <script src="main.js" defer></script>
 </head>
 <body>
+    <h1>To Do List</h1>
     <div id="items"></div>
     <template id="itemTemplate">
         <div class="item">
             <input type="checkbox" class="item-completed">
-            <input type="text" class="item-description" placeholder="To-Do item..."> 
+            <input type="text" class="item-description" placeholder="To-Do item...">
+            <button class="brisi">Izbriši</button> 
         </div>
     </template>
-    <button id="add">Add Item</button>
+    <div class="addItem">
+    <button id="add">Add Item</button></div>
 
 </body>
 </html>
