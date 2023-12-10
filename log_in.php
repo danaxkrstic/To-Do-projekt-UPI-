@@ -11,12 +11,12 @@
 
         <h1>Prijava</h1>
 
-        <form name="prijava" method="post" action="login.php">
+        <form name="prijava" method="post" action="log_in.php">
 
             <div class="input">
 
-                <label for="username">Korisničko ime</b></label>
-                <input type="text" name="username" required>
+                <label for="email">E-mail</b></label>
+                <input type="text" name="email" required>
 
                 <label for="password">Lozinka</label>
                 <input type="password" name="password" required>
@@ -39,12 +39,12 @@
 
     if (is_post_request()) {
 
-        $username = $_POST['username'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
 
         $con = connectdatabase(); 
 
-        $provjera_upit = "SELECT * FROM user WHERE username = '".$username."' AND passw = '".$password."'"; 
+        $provjera_upit = "SELECT * FROM user WHERE email = '".$email."' AND passw = '".$password."'"; 
         $rezprovjera = mysqli_query($con,$provjera_upit);
 
         if ($rezprovjera && mysqli_num_rows($rezprovjera) == 1){
