@@ -1,0 +1,46 @@
+.prijava {
+    text-decoration: double;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    margin: 30px;
+    
+}
+
+.registracija {
+    text-decoration: double;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    margin: 30px;
+}
+
+body {
+    background-color: rgb(5, 245, 233);
+    margin: 230px;
+}
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 90px;
+    margin: 50px;
+}
+
+#login {
+    padding: 20px 35px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #009578;
+    cursor: pointer;
+}
+
+#reg {
+    padding: 20px 35px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #009578;
+    cursor: pointer;
+}
