@@ -8,7 +8,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['email'])) {
 } 
 
 if (isset($_POST["log_out"])) {
-    header("Location: main_menu.php");
+    header("Location: main_menu.html");
     exit();
 }
 
