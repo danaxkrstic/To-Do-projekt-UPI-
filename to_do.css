@@ -25,3 +25,11 @@
     justify-content: space-around;
     background-color: pink;
 }
+
+.finished {
+    background-color: green; 
+}
+
+.unfinished {
+    background-color: red; 
+}
