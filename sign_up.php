@@ -1,97 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sign_up.css">
-    <title> Sign In </title>
-</head>
-<body>
-    <div class="container">
-
-        <h1>Sign-In</h1>
-
-        <form name="prijava" method="post" action="sign_up.php">
-
-            <div class="input">
-
-                <label for="username">Username</b></label>
-                <input type="text" name="username" required>
-
-                <label for="email">E-mail</label>
-                <input type="text" name="email" required>
-
-                <label for="password">Password</label>
-                <input type="password" name="password" required>
-
-            </div>
-
-            <input type="submit" name="submit_signup" value="Sign Up">
-      
-        </form>
-
-    </div>
-
-</body>
-</html>
-
-
-    
 <?php
 
-    include("pomocne_funkcije.php");
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    session_start();
-
-    if (isset($_POST["submit_signup"])) {
-
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $email = $_POST['email'];
-
-        if (isValidEmail($email)){
-            $con = connectdatabase(); 
-
-            $provjera_upit = "SELECT * FROM user WHERE email = '".$email."'"; 
-            $rezprovjera = mysqli_query($con,$provjera_upit);
-
-            if (!$rezprovjera || mysqli_num_rows($rezprovjera) == 0){
-
-                $upit = "INSERT INTO user(email,username,passw) VALUES('$email', '$username', '$password')";
-
-                $rezupit = mysqli_query($con, $upit);
-
-                
-
-                $_SESSION["username"] = $username;
-                $_SESSION["email"] = $email;
-
-                header("location: to_do.php");
-                exit();
-
-            }
-            else{
-
-                echo "<div class='error_div'>
-        
-                E-mail already in use.
-        
-                </div>";
-
-            }
-        }
-        else{
-
-            echo "<div class='error_div'>
-        
-                E-mail not in correct format.
-        
-                </div>";
-
-        }
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+    $username = $_POST["username"];
     
+
+    $con = mysqli_connect("localhost", "root", "", "to_do");
+
+    $upit = "SELECT * FROM user WHERE email = ?";
+    
+    $stmt = mysqli_prepare($con, $upit);
+
+    // bind parametara
+    mysqli_stmt_bind_param($stmt, "s", $email);
+
+    // izvršimo $stmt
+    mysqli_stmt_execute($stmt);
+
+    $result = mysqli_stmt_get_result($stmt);
+
+    // je li vraćen red
+    if (mysqli_num_rows($result) === 1) {
+        echo "failure";
+        mysqli_stmt_close($stmt);
         
-    }	
+
+    } else {
+
+        $upit_unos = "INSERT INTO user (email, username, passw) VALUES (?, ?, ?)";
+        
+        $stmt_unos = mysqli_prepare($con, $upit_unos);
+
+        //hashed password???
+
+        mysqli_stmt_bind_param($stmt_unos, "sss", $email, $username, $password);
+
+        mysqli_stmt_execute($stmt_unos);
+
+        
+
+        mysqli_stmt_close($stmt_unos);
+        echo "success";
+
+    }
+
+    mysqli_close($con);
+    
+
+}
 
       
 ?>
