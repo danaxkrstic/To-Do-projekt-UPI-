@@ -20,8 +20,8 @@ function GetUserTasks() {
 
                 var response = xhr.responseText;
                 console.log(response);
-                document.getElementById('h2_hello').innerHTML += response + "!";
-                user = response;
+
+                Obrada_UserTasks(response);
 
             } else {
                 alert("Error: " + xhr.status);
@@ -34,6 +34,12 @@ function GetUserTasks() {
     xhr.send("email=" + encodeURIComponent(email));
 }
 
+function Obrada_UserTasks(response){
+
+    document.getElementById('h2_hello').innerHTML += response + "!";
+    user = response;
+}
+
 
 //trebaju se preoblikovat funkcije kako bi mogli napravit unit test - kasnije
 function GetTasks(){
@@ -43,34 +49,7 @@ function GetTasks(){
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
 
-                var jsonResponse = JSON.parse(xhr.responseText);
-
-                for (var i = 0; i < jsonResponse.length; i++) {
-
-                    var taskContainer = document.getElementById('task');
-
-
-                    var taskDiv = document.createElement('div');
-                    taskDiv.id = 'task_'+jsonResponse[i].task_id;  
-
-
-                    taskDiv.innerHTML = jsonResponse[i].description + " " + jsonResponse[i].due_date + " " +
-                    "<input type='submit' class= finish_submit name='finish_submit' onclick='ChangeFinishedStatus(this)' value='Finished'> " +
-                    "<input type='submit' onclick='DeleteTask(this)' name='delete_task' value='X'>";
-
-
-                    taskContainer.appendChild(taskDiv);
-
-                    var finishButton = taskDiv.querySelector('.finish_submit');
-
-                    if (jsonResponse[i].finished == 1) {
-                            finishButton.style.backgroundColor = 'green'; 
-                    } else {
-                            finishButton.style.backgroundColor = 'red'; 
-                    }
-
-
-                }
+                Obrada_Tasks(xhr.responseText);
 
             } else {
                 alert("Error: " + xhr.status);
@@ -81,6 +60,38 @@ function GetTasks(){
     xhr.open("POST", "./php/get_tasks.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("email=" + encodeURIComponent(email));
+}
+
+function Obrada_Tasks(response){
+
+    var jsonResponse = JSON.parse(response);
+
+    for (var i = 0; i < jsonResponse.length; i++) {
+
+            var taskContainer = document.getElementById('task');
+
+
+            var taskDiv = document.createElement('div');
+            taskDiv.id = 'task_'+jsonResponse[i].task_id;  
+
+
+            taskDiv.innerHTML = jsonResponse[i].description + " " + jsonResponse[i].due_date + " " +
+                    "<input type='submit' class= finish_submit name='finish_submit' onclick='ChangeFinishedStatus(this)' value='Finished'> " +
+                    "<input type='submit' onclick='DeleteTask(this)' name='delete_task' value='X'>";
+
+
+            taskContainer.appendChild(taskDiv);
+
+            var finishButton = taskDiv.querySelector('.finish_submit');
+
+            if (jsonResponse[i].finished == 1) {
+                    finishButton.style.backgroundColor = 'green'; 
+            } else {
+                    finishButton.style.backgroundColor = 'red'; 
+            }
+
+
+    }
 }
 
 function AddTask() {
@@ -129,25 +140,7 @@ function DeleteTask(button){
     
 }
 
-GetUser();
 
-
-function LogOut(){
-    console.log("Logging out...");
-    window.location.href = "main_menu.html";
-}
-
-//pomocna funkcija - izvuci vanka posli
-function extractNumberFromString(str) {
-    const matches = str.match(/\d+/);
-
-    if (matches) {
-        const number = parseInt(matches[0], 10);
-        return number;
-    } else {
-        return null; 
-    }
-}
 
 function ChangeFinishedStatus(button){
 
@@ -183,6 +176,7 @@ function ChangeFinishedStatus(button){
 
 }
 
+
 function ChangePassword(){
 
     let password = document.getElementById("new_pass").value;
@@ -208,15 +202,16 @@ function ChangePassword(){
 
     xhr.open("POST", "./php/change_password.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send("email=" + encodeURIComponent(email));
+    xhr.send("email=" + encodeURIComponent(email) + "&passw=" + encodeURIComponent(password));
 
 }
 
-function LogOut(){
 
-    console.log("Logging out...");
-    window.location.href = "main_menu.html";
-}
+
+GetUser();
+
+
+
 
 function extractNumberFromString(str) {
     const matches = str.match(/\d+/);
@@ -227,4 +222,9 @@ function extractNumberFromString(str) {
     } else {
         return null; 
     }
+}
+
+function LogOut(){
+    console.log("Logging out...");
+    window.location.href = "main_menu.html";
 }
