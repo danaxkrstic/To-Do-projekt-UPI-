@@ -3,7 +3,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $email = $_POST["email"];
-    $password = $_POST["password"];
+    $password = $_POST["passw"];
     $username = $_POST["username"];
     
 
@@ -39,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         mysqli_stmt_execute($stmt_unos);
 
+        
         
 
         mysqli_stmt_close($stmt_unos);
