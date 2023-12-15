@@ -31,7 +31,7 @@ function sendSignUpRequest(email, password, username) {
       }
     };
   
-    xhr.open("POST", "sign_up.php", true);
+    xhr.open("POST", "./php/sign_up.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("email=" + encodeURIComponent(email) + "&passw=" + encodeURIComponent(password) + "&username=" + encodeURIComponent(username));
 }

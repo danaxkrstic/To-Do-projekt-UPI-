@@ -27,7 +27,7 @@ function attemptLogin(event) {
         }
     };
 
-    xhr.open("POST", "log_in.php", true);
+    xhr.open("POST", "./php/log_in.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("email=" + encodeURIComponent(email) + "&password=" + encodeURIComponent(password));
 

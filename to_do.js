@@ -29,7 +29,7 @@ function GetUserTasks() {
         }
     };
 
-    xhr.open("POST", "to_do.php", true);
+    xhr.open("POST", "./php/to_do.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("email=" + encodeURIComponent(email));
 }
@@ -78,7 +78,7 @@ function GetTasks(){
         }
     };
 
-    xhr.open("POST", "get_tasks.php", true);
+    xhr.open("POST", "./php/get_tasks.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("email=" + encodeURIComponent(email));
 }
@@ -88,7 +88,7 @@ function AddTask() {
     var new_date = document.getElementById('date_input').value;
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "add_task.php", true);
+    xhr.open("POST", "./php/add_task.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     // tek nakon sta zavrsi request pozvat osvjezenje
@@ -121,7 +121,7 @@ function DeleteTask(button){
         }
     };
 
-    xhr.open("POST", "delete_task.php", true);
+    xhr.open("POST", "./php/delete_task.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("task_id=" + encodeURIComponent(task_id_to_send));
 
@@ -174,7 +174,7 @@ function ChangeFinishedStatus(button){
         }
     };
 
-    xhr.open("POST", "finish_task.php", true);
+    xhr.open("POST", "./php/finish_task.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("task_id=" + encodeURIComponent(task_id_to_send));
 
@@ -206,7 +206,7 @@ function ChangePassword(){
     }
     };
 
-    xhr.open("POST", "change_password.php", true);
+    xhr.open("POST", "./php/change_password.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("email=" + encodeURIComponent(email));
 
