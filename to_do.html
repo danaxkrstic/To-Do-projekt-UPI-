@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="to_do.css">
+    <script defer src="to_do.js"></script>
+    <title> To Do </title>
+</head>
+
+<body>
+    <div class="container">
+
+        
+
+            <header class="header">
+            <form method="post">
+                <h2 id="h2_hello">Hello </h2>
+            </form>
+                <button onclick="LogOut()" name="log_out">LOG OUT</button>
+            </header>
+
+        
+
+            <div class="task_list">
+
+                
+                <div id="task">
+                   
+                </div>
+                
+
+                <div id="task_input">
+                    <input type="text" id="description_input" name="description_input">
+                    <input type="date" id="date_input" name="date_input">
+                    <button type="submit" name="add_task" onclick="AddTask()">Add</button>
+                </div>
+
+            </div>
+            <footer class="footer">
+                <button name="change_pass" onclick="ChangePassword()">Change Password?</button>
+                <input type="text" id="new_pass" name="new_pass">
+                <div id="error-pass"></div>
+            </footer>
+
+        
+
+    </div>
+
+</body>
+
+</html>
