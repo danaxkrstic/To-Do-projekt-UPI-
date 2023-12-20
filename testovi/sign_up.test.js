@@ -138,7 +138,7 @@ describe('attemptSignUp', () => {
 
     sendSignUpRequest(email, password, username);
 
-    expect(mockXHR.open).toHaveBeenCalledWith('POST', 'sign_up.php', true);
+    expect(mockXHR.open).toHaveBeenCalledWith('POST', './php/sign_up.php', true);
   });
 
   it('handle SignUpResponse', () => {

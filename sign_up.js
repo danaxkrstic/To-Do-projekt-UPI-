@@ -50,6 +50,6 @@ function handleSignUpResponse(status, response, email) {
     }
 }
   
-  // export za test
-  module.exports = { attemptSignUp, isValidEmail, displayError, sendSignUpRequest, handleSignUpResponse };
+  // export za test - ne radi u browseru pa zakomentirat
+   module.exports = { attemptSignUp, isValidEmail, displayError, sendSignUpRequest, handleSignUpResponse };
   

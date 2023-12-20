@@ -1,5 +1,5 @@
 .container{
-    background-color: yellow;
+    background-color: wheat;
 }
 
 .header{
@@ -32,4 +32,10 @@
 
 .unfinished {
     background-color: red; 
+}
+
+.search_div {
+    
+    background-color: palegreen;
+    padding: 10px;
 }
