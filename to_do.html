@@ -30,7 +30,6 @@
                    
                 </div>
                 
-
                 <div id="task_input">
                     <input type="text" id="description_input" name="description_input">
                     <input type="date" id="date_input" name="date_input">
@@ -38,6 +37,15 @@
                 </div>
 
             </div>
+
+            <div class = "search_div">
+
+                <input type="text" id="search_input" name="search_input">
+                <button name="search_task" onclick="SearchTasks()">Search</button>
+                <button type="submit" name="refresh" onclick="Refresh()">Refresh all tasks</button>
+
+            </div>
+
             <footer class="footer">
                 <button name="change_pass" onclick="ChangePassword()">Change Password?</button>
                 <input type="text" id="new_pass" name="new_pass">

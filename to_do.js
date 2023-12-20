@@ -41,7 +41,6 @@ function Obrada_UserTasks(response){
 }
 
 
-//trebaju se preoblikovat funkcije kako bi mogli napravit unit test - kasnije
 function GetTasks(){
 
     var xhr = new XMLHttpRequest();
@@ -63,6 +62,10 @@ function GetTasks(){
 }
 
 function Obrada_Tasks(response){
+
+    
+    document.getElementById('task').innerHTML = "";
+    
 
     var jsonResponse = JSON.parse(response);
 
@@ -204,6 +207,34 @@ function ChangePassword(){
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("email=" + encodeURIComponent(email) + "&passw=" + encodeURIComponent(password));
 
+}
+
+
+function SearchTasks(){
+
+    let search_value = document.getElementById("search_input").value;
+
+    var xhr = new XMLHttpRequest();
+    
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+
+            console.log("Tu smo.");
+            console.log(JSON.parse(xhr.responseText));
+            Obrada_Tasks(xhr.responseText);
+
+        }
+    };
+
+    xhr.open("POST", "./php/search_task.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("search=" + encodeURIComponent(search_value) + "&email=" + encodeURIComponent(email));
+
+}
+
+function Refresh(){
+    GetTasks();
 }
 
 
