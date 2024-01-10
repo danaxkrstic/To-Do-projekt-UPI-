@@ -1,37 +1,88 @@
 .container{
-    background-color: wheat;
+    background-color: white;
+   
 }
 
 .header{
-    background-color: red;
+    background-color: blue;
+    
     
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-icon img {
+    width: 100px; 
+    height: 100px;
+}
+
+.header h2 {
+    color: white;
+    margin: 0;
 }
 
 .footer{
-    background-color:green;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    background-color: green;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
 }
+
+.footer button[name="change_pass"] {
+    background-color: #2244aa;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer button[name="change_pass"]:hover {
+    background-color: lightblue;
+}
+
+.task_list {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 100px;
+    background-color: lightblue;
+    border-radius: 10px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 
 .task{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     background-color: pink;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #2980b9;
 }
 
 .finished {
-    background-color: green; 
+    background-color: blue; 
 }
 
 .unfinished {
-    background-color: red; 
+    background-color: blue; 
 }
 
 .search_div {
@@ -39,3 +90,52 @@
     background-color: palegreen;
     padding: 10px;
 }
+
+.header button[name="log_out"] {
+    background-color: #2244aa; 
+    color: white; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.header button[name="log_out"]:hover {
+    background-color: lightblue; 
+}
+
+#task_input button[name="add_task"] {
+    background-color: #2244aa; 
+    color: white; 
+    border: 1px solid #27ae60; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+#task_input button[name="add_task"]:hover {
+    background-color: lightblue; 
+}
+
+.search_div {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: palegreen;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.search_div input[type="text"] {
+    padding: 5px;
+}
+
+.search_div button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
