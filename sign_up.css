@@ -1,0 +1,75 @@
+
+
+body, html {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%); 
+}
+
+.container {
+    position: relative; 
+    width: 400px; 
+    border-radius: 10px; 
+    padding: 40px; 
+    background-color: #f9f9f9; 
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    color: #333366;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.input label {
+   display:block;
+   margin-top :10px; 
+   font-family: 'Courier New', Courier, monospace;
+   font-weight:bold;
+}
+
+.input input[type="text"],
+.input input[type="password"],
+.input input[type="email"] {
+   width :100%;
+   padding :8px; 
+   margin-bottom :10px; 
+   border: 1px solid #ccc;
+   border-radius :10px; 
+   box-shadow :inset 0 0 5px rgba(0 ,0 ,0 ,0.1); 
+   transition :all .3s ease-in-out ; 
+}
+
+input:hover{
+     background-color:#e6e6e6 ; 
+     border-color:#333366 ; 
+     box-shadow :inset 0 0 10px rgba(0 ,0 ,0 ,.2); 
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px 20px;
+    background-color: #333366;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+}
+
+button:hover {
+    background-color: #74ebd5;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+
+.inputContainer {
+    margin-bottom: 10px;
+}
