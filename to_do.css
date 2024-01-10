@@ -1,54 +1,50 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
 .container{
     background-color: white;
-   
+    margin: 50px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    
 }
 
 .header{
-    background-color: blue;
-    
-    
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
 }
 
 .header-icon img {
-    width: 100px; 
+    width: 100px;
     height: 100px;
+    margin-right: 10px;
 }
 
-.header h2 {
-    color: white;
-    margin: 0;
-}
 
-.footer{
-    background-color: green;
-        width: 100%;
-        box-sizing: border-box;
-        padding: 20px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-top: 20px;
-}
-
-.footer button[name="change_pass"] {
-    background-color: #2244aa;
-    color: white;
+.header button[name="log_out"] {
+    background-color: #2244aa; 
+    color: white; 
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; 
 }
 
-.footer button[name="change_pass"]:hover {
-    background-color: lightblue;
+.header button[name="log_out"]:hover {
+    background-color: lightblue; 
 }
 
 .task_list {
@@ -61,6 +57,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.task_list p {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
 
@@ -77,38 +79,10 @@
     border: 1px solid #2980b9;
 }
 
-.finished {
-    background-color: blue; 
-}
-
-.unfinished {
-    background-color: blue; 
-}
-
-.search_div {
-    
-    background-color: palegreen;
-    padding: 10px;
-}
-
-.header button[name="log_out"] {
-    background-color: #2244aa; 
-    color: white; 
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; 
-}
-
-.header button[name="log_out"]:hover {
-    background-color: lightblue; 
-}
-
 #task_input button[name="add_task"] {
-    background-color: #2244aa; 
-    color: white; 
-    border: 1px solid #27ae60; 
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -119,6 +93,15 @@
     background-color: lightblue; 
 }
 
+#description_input,
+#date_input {
+    padding: 10px;
+    border: 1px solid #9e2525;
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+
 .search_div {
     width: 100%;
     box-sizing: border-box;
@@ -128,14 +111,83 @@
     justify-content: space-around;
     align-items: center;
     margin-top: 5px;
+
 }
 
 .search_div input[type="text"] {
-    padding: 5px;
-}
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;}
 
 .search_div button {
-    padding: 5px 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+.search_div button:hover {
+    background-color: #2980b9;
+}
+
+
+.footer{
+    background-color: green;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+}
+
+
+
+
+.footer button[name="change_pass"] {
+    background-color: #2244aa;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer button[name="change_pass"]:hover {
+    background-color: lightblue;
+}
+
+
+.finished {
+    background-color: blue; 
+}
+
+.unfinished {
+    background-color: blue; 
+}
+
+.finish_submit,
+.delete_task {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.finish_submit:hover,
+.delete_task:hover {
+    background-color: #2980b9;
+} 
+
+
+
+
+
 
