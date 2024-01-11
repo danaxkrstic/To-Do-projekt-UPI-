@@ -18,11 +18,12 @@ body{
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif;
     text-align: center;
-    font-weight: 700;
+    font-weight: bold;
     color: #333366;
-    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    margin-bottom: 15px;
 }
 
 .input {
@@ -32,6 +33,7 @@ h1 {
 
 label {
     font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
     margin-top: 10px;
 }
 
@@ -54,6 +56,7 @@ input:hover {
 
 button {
     padding: 10px 20px;
+    font-family: 'Courier New', Courier, monospace;
     background-color: #333366;
     color: white;
     border: none;
