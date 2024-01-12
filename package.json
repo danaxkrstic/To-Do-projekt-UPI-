@@ -12,7 +12,7 @@
   "devDependencies": {
     "jest": "^29.7.0",
     "jest-fetch-mock": "^3.0.3",
-    "jsdom": "^23.0.1"
+    "jsdom": "^23.2.0"
   },
   "dependencies": {
     "xhr2": "^0.2.1"

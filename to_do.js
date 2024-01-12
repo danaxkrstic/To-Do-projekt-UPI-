@@ -4,11 +4,9 @@ var user = "none";
 
 
 function GetUser() {
-    document.addEventListener("DOMContentLoaded", function () {
-        email = localStorage.getItem("email");
-        GetUserTasks();
-        GetTasks();
-    });
+    email = localStorage.getItem("email");
+    GetUserTasks();
+    GetTasks();
 }
 
 function GetUserTasks() {
@@ -238,12 +236,6 @@ function Refresh(){
 }
 
 
-
-GetUser();
-
-
-
-
 function extractNumberFromString(str) {
     const matches = str.match(/\d+/);
 
@@ -259,3 +251,16 @@ function LogOut(){
     console.log("Logging out...");
     window.location.href = "main_menu.html";
 }
+
+//PART FOR REGULAR RUN
+
+document.addEventListener("DOMContentLoaded", GetUser);
+
+
+//PART FOR TESTING
+
+//module.exports = { GetUser, extractNumberFromString , Obrada_UserTasks , ChangePassword};
+
+
+
+
