@@ -1,5 +1,4 @@
 <?php
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $email = $_POST["email"];
@@ -33,24 +32,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $stmt_unos = mysqli_prepare($con, $upit_unos);
 
-        //hashed password???
-
         mysqli_stmt_bind_param($stmt_unos, "sss", $email, $username, $password);
 
         mysqli_stmt_execute($stmt_unos);
-
-        
-        
 
         mysqli_stmt_close($stmt_unos);
         echo "success";
 
     }
-
     mysqli_close($con);
-    
-
 }
-
       
 ?>

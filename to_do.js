@@ -5,11 +5,11 @@ var user = "none";
 
 function GetUser() {
     email = localStorage.getItem("email");
-    GetUserTasks();
+    GetUsername();
     GetTasks();
 }
 
-function GetUserTasks() {
+function GetUsername() {
 
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
@@ -19,7 +19,7 @@ function GetUserTasks() {
                 var response = xhr.responseText;
                 console.log(response);
 
-                Obrada_UserTasks(response);
+                Obrada_Username(response);
 
             } else {
                 alert("Error: " + xhr.status);
@@ -32,7 +32,7 @@ function GetUserTasks() {
     xhr.send("email=" + encodeURIComponent(email));
 }
 
-function Obrada_UserTasks(response){
+function Obrada_Username(response){
 
     document.getElementById('h2_hello').innerHTML += response + "!";
     user = response;
@@ -58,42 +58,46 @@ function GetTasks(){
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("email=" + encodeURIComponent(email));
 }
+function Obrada_Tasks(response) {
 
-function Obrada_Tasks(response){
-
-    
     document.getElementById('task').innerHTML = "";
-    
 
     var jsonResponse = JSON.parse(response);
 
     for (var i = 0; i < jsonResponse.length; i++) {
+        var taskContainer = document.getElementById('task');
+        var taskDiv = document.createElement('div');
+        taskDiv.id = 'task_' + jsonResponse[i].task_id;
 
-            var taskContainer = document.getElementById('task');
+        // je li task uskoro
+        var dueDate = new Date(jsonResponse[i].due_date);
+        var currentDate = new Date();
+        var timeDifference = dueDate - currentDate;
+        var daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
+        taskDiv.innerHTML = jsonResponse[i].description + " " + jsonResponse[i].due_date + " " +
+            "<input type='submit' class='finish_submit' name='finish_submit' onclick='ChangeFinishedStatus(this)' value='Finished'> " +
+            "<input type='submit' onclick='DeleteTask(this)' name='delete_task' value='X'>";
 
-            var taskDiv = document.createElement('div');
-            taskDiv.id = 'task_'+jsonResponse[i].task_id;  
+        taskContainer.appendChild(taskDiv);
 
+        var finishButton = taskDiv.querySelector('.finish_submit');
 
-            taskDiv.innerHTML = jsonResponse[i].description + " " + jsonResponse[i].due_date + " " +
-                    "<input type='submit' class= finish_submit name='finish_submit' onclick='ChangeFinishedStatus(this)' value='Finished'> " +
-                    "<input type='submit' onclick='DeleteTask(this)' name='delete_task' value='X'>";
-
-
-            taskContainer.appendChild(taskDiv);
-
-            var finishButton = taskDiv.querySelector('.finish_submit');
-
-            if (jsonResponse[i].finished == 1) {
-                    finishButton.style.backgroundColor = 'green'; 
-            } else {
-                    finishButton.style.backgroundColor = 'red'; 
-            }
-
-
+        if (jsonResponse[i].finished == 1) {
+            finishButton.style.backgroundColor = 'green';
+        }
+        else{
+            finishButton.style.backgroundColor = 'red';
+        }
+    
+        // Ako u roku od 3 dana, obavijesti da rok uskoro
+        if (daysDifference <= 3) {
+            taskDiv.innerHTML+= "<b> USKORO!!! </b>";
+        } 
+        
     }
 }
+
 
 function AddTask() {
     var new_desc = document.getElementById('description_input').value;
@@ -106,8 +110,6 @@ function AddTask() {
     // tek nakon sta zavrsi request pozvat osvjezenje
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
-
-            document.getElementById('task').innerHTML = "";
 
             GetTasks();
         }
@@ -173,8 +175,6 @@ function ChangeFinishedStatus(button){
     xhr.send("task_id=" + encodeURIComponent(task_id_to_send));
 
     
-
-
 }
 
 
@@ -249,7 +249,11 @@ function extractNumberFromString(str) {
 
 function LogOut(){
     console.log("Logging out...");
+    email="";
+    localStorage.setItem("email", email);
     window.location.href = "main_menu.html";
+    
+                    
 }
 
 //PART FOR REGULAR RUN
@@ -259,7 +263,7 @@ document.addEventListener("DOMContentLoaded", GetUser);
 
 //PART FOR TESTING
 
-//module.exports = { GetUser, extractNumberFromString , Obrada_UserTasks , ChangePassword};
+//module.exports = { GetUser, extractNumberFromString , Obrada_UserTasks , ChangePassword , SearchTasks};
 
 
 

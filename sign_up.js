@@ -6,7 +6,7 @@ function attemptSignUp(event) {
     const username = document.getElementById("username").value;
   
     if (!isValidEmail(email)) {
-      displayError("Please enter the correct email format.");
+      displayError("Napišite mail u točnom formatu.");
       return;
     }
   
@@ -43,7 +43,7 @@ function handleSignUpResponse(status, response, email) {
         localStorage.setItem("email", email);
         window.location.href = "to_do.html";
       } else {
-        displayError("Email already in use.");
+        displayError("Email se koristi.");
       }
     } else {
       alert("Error: " + status);
@@ -51,5 +51,5 @@ function handleSignUpResponse(status, response, email) {
 }
   
   // export za test - ne radi u browseru pa zakomentirat
-   module.exports = { attemptSignUp, isValidEmail, displayError, sendSignUpRequest, handleSignUpResponse };
+  // module.exports = { attemptSignUp, isValidEmail, displayError, sendSignUpRequest, handleSignUpResponse };
   

@@ -19,7 +19,7 @@ function attemptLogin(event) {
                     window.location.href = "to_do.html";
 
                 } else {
-                    document.getElementById('error').innerHTML = "Incorrect email or password.";
+                    document.getElementById('error').innerHTML = "Netočan mail ili lozinka";
                 }
             } else {
                 alert("Error: " + xhr.status);
