@@ -5,29 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="sign_up.css">
     <script defer src="sign_up.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons/css/boxicons.min.css">
     <title> Sign In </title>
 </head>
 <body>
     <div class="container">
 
-        <h1>Sign-In</h1>
+        <h1>Registracija</h1>
 
         <form name="prijava" onsubmit="attemptSignUp(event)">
 
             <div class="input">
 
-                <label for="username">Username</b></label>
+                <label for="username">Korisničko ime <i class="bx bx-user"></i></b></label>
                 <input type="text" id="username" name="username" required>
 
-                <label for="email">E-mail</label>
+                <label for="email">E-mail <i class='bx bx-envelope'></i></i></label>
                 <input type="text" id="email" name="email" required>
 
-                <label for="password">Password</label>
+                <label for="password">Lozinka <i class="bx bx-lock"></i></label>
                 <input type="password" id="password" name="password" required>
 
             </div>
-
-            <input type="submit" name="submit_signup" value="Sign Up">
+            <button type="submit" name="submit_login">Sign Up</button>
       
         </form>
         <div id="error"></div>

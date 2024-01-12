@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sign_up.css">
+    <link rel="stylesheet" href="log_in.css">
     <script defer src="log_in.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto, 14px">
+    <link href='4' rel='stylesheet' type='text/css'>
     <title> Prijava </title>
 </head>
 <body>
@@ -16,15 +19,16 @@
         <form name="prijava" onsubmit="attemptLogin(event)">
             <div class="input">
 
-                <label for="email">E-mail</b></label>
+                <label for="email">E-mail <i class="bx bx-user"></i></label>
                 <input type="text" id="email" name="email" required>
+                
 
-                <label for="password">Lozinka</label>
+                <label for="password">Lozinka <i class="bx bx-lock"></i></label>
                 <input type="password" id="password" name="password" required>
-
+ 
             </div>
 
-            <input type="submit" name="submit_login" value="Login">
+            <button type="submit" name="submit_login">Login</button>
       
         </form>
         <div id="error"></div>
