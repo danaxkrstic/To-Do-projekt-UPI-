@@ -64,12 +64,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`email`, `username`, `passw`) VALUES
-('a@a.a', 'novacura', 'ddd'),
-('m@m.m', 'mama', 'bazinga'),
-('n@n.n', 'dana', 'blabla'),
-('p@p.p', 'nova', ''),
-('q@bbb.vvv', 'a', 'svds'),
-('s@s.s', 'aaa', 's');
+('n@n.n', 'dana', 'blabla');
 
 --
 -- Indexes for dumped tables
