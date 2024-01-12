@@ -13,9 +13,6 @@
 
     
     <div class="container">
-
-        
-
             <header class="header">
                 <div class="header-icon">
                     <img src="your-icon.png" alt="Icon">
@@ -23,16 +20,15 @@
                  </div>
 
             <form method="post">
-                <h2 id="h2_hello">Hello </h2>
+                <h2 id="h2_hello">Bok </h2>
             </form>
                 <button onclick="LogOut()" name="log_out">LOG OUT</button>
             </header>
 
-        
-
             <div class="task_list">
 
                 <p style="font-weight: bold;">Unesite task</p>
+
                 <div id="task">
                    
                 </div>
@@ -40,7 +36,7 @@
                 <div id="task_input">
                     <input type="text" id="description_input" name="description_input">
                     <input type="date" id="date_input" name="date_input">
-                    <button type="submit" name="add_task" onclick="AddTask()">Add</button>
+                    <button type="submit" name="add_task" onclick="AddTask()">Dodaj</button>
                 </div>
 
             </div>
@@ -48,24 +44,19 @@
             <div class = "search_div">
 
                 <input type="text" id="search_input" name="search_input">
-                <button name="search_task" onclick="SearchTasks()">Search</button>
-                <button type="submit" name="refresh" onclick="Refresh()">Refresh all tasks</button>
+                <button name="search_task" onclick="SearchTasks()">Traži</button>
+                <button type="submit" name="refresh" onclick="Refresh()">Refresh tasks</button>
 
             </div>
 
             <footer class="footer">
-                <button name="change_pass" onclick="ChangePassword()">Change Password?</button>
+                <button name="change_pass" onclick="ChangePassword()">Nova Lozinka?</button>
                 <input type="text" id="new_pass" name="new_pass">
 
          
 
                 <div id="error-pass"></div>
             </footer>
-
-           
-    
-
-        
 
     </div>
 
