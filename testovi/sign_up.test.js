@@ -1,3 +1,6 @@
+//TREBA JOS INSTALIRAT npm install jest jsdom xhr2 uz ono ostalo
+
+
 // signup.test.js
 
 const { JSDOM } = require('jsdom');
