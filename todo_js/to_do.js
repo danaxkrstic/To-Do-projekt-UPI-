@@ -181,6 +181,7 @@ function ChangeFinishedStatus(button){
 function ChangePassword(){
 
     let password = document.getElementById("new_pass").value;
+    document.getElementById("error-pass").style="color:white;";
 
     console.log(password);
 

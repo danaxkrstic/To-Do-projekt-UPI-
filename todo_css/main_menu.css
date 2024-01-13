@@ -1,0 +1,81 @@
+.prijava, .registracija {
+    text-decoration: double;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    margin: 30px;
+    
+}
+
+.registracija {
+    text-decoration: double;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    margin: 30px;
+}
+
+body {
+    /* margin: 230px; */
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+}
+.container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding: 40px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+h1, h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #333366;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+p{
+    color: #0c0c0f;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+
+img {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+    position: inherit;
+    max-width: 30%;
+    max-height: 30%;
+  }
+  
+  button {
+    padding: 30px 90px;
+    background-color: #333366;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #74ebd5;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
