@@ -41,10 +41,6 @@ CREATE TABLE `task` (
 
 INSERT INTO `task` (`task_id`, `description`, `due_date`, `finished`, `user_id`) VALUES
 (3, 'task1', '0000-00-00', 1, 'n@n.n'),
-(23, 'jj', '0000-00-00', 0, 'p@p.p'),
-(25, 'jjkkkmm', '0000-00-00', 1, 'p@p.p'),
-(26, 'gledaj nseriju', '2023-12-29', 1, 'm@m.m'),
-(27, 'kjhkn', '2023-12-29', 0, 'm@m.m'),
 (32, 'task2', '0000-00-00', 1, 'n@n.n');
 
 -- --------------------------------------------------------
