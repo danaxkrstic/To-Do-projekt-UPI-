@@ -1,5 +1,5 @@
 const { JSDOM } = require('jsdom');
-const { ChangePassword }  = require('../to_do');
+const { ChangePassword }  = require('../todo_js/to_do');
 
 const XMLHttpRequest = require('xhr2');
 global.XMLHttpRequest = XMLHttpRequest;

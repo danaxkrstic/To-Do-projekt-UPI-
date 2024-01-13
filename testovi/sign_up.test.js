@@ -4,7 +4,7 @@
 // signup.test.js
 
 const { JSDOM } = require('jsdom');
-const { attemptSignUp, isValidEmail, displayError, sendSignUpRequest, handleSignUpResponse } = require('../sign_up');
+const { attemptSignUp, isValidEmail, displayError, sendSignUpRequest, handleSignUpResponse } = require('../todo_js/sign_up');
 
 
 // treba xhr2 paket za simulirat XMLHttpRequest
@@ -58,8 +58,8 @@ const dom = new JSDOM(`
 global.document = dom.window.document;
 
 // Mocking isValidEmail
-jest.mock('../sign_up', () => ({
-  ...jest.requireActual('../sign_up'), //oznaka da inaće ne koristimo mock za ovu funkciju
+jest.mock('../todo_js/sign_up', () => ({
+  ...jest.requireActual('../todo_js/sign_up'), //oznaka da inaće ne koristimo mock za ovu funkciju
   isValidEmail: jest.fn(),
 }));
 

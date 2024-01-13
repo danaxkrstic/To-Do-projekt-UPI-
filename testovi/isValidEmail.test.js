@@ -1,4 +1,4 @@
-const { isValidEmail } = require('../sign_up'); // Import the actual implementation
+const { isValidEmail } = require('../todo_js/sign_up'); // Import the actual implementation
 
 describe('isValidEmail', () => {
   it('should return true for a valid email', () => {

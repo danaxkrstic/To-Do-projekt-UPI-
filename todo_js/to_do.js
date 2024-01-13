@@ -259,12 +259,12 @@ function LogOut(){
 
 //PART FOR REGULAR RUN
 
-document.addEventListener("DOMContentLoaded", GetUser);
+//document.addEventListener("DOMContentLoaded", GetUser);
 
 
 //PART FOR TESTING
 
-//module.exports = { GetUser, extractNumberFromString , Obrada_UserTasks , ChangePassword , SearchTasks};
+module.exports = { GetUser, extractNumberFromString , Obrada_Username , ChangePassword , SearchTasks};
 
 
 

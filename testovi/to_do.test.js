@@ -1,8 +1,8 @@
 const { JSDOM } = require('jsdom');
-const { extractNumberFromString , Obrada_UserTasks} = require('../to_do');
+const { extractNumberFromString , Obrada_UserTasks, Obrada_Username} = require('../todo_js/to_do');
 
-jest.mock('../to_do', () => ({
-    ...jest.requireActual('../to_do'),
+jest.mock('../todo_js/to_do', () => ({
+    ...jest.requireActual('../todo_js/to_do'),
     GetUser: jest.fn(),
     // ... mock other functions if needed
 }));
@@ -80,7 +80,7 @@ global.document = dom.window.document;
 document.getElementById = jest.fn();
 
 
-describe('Obrada_UserTasks', () => {
+describe('Obrada_Username', () => {
     it('should update the innerHTML of the specified element', () => {
         // Mock the necessary elements and values
         const mockedElement = {
@@ -89,7 +89,7 @@ describe('Obrada_UserTasks', () => {
         document.getElementById.mockReturnValueOnce(mockedElement);
 
         // Call the function
-        Obrada_UserTasks('Hello, user');
+        Obrada_Username('Hello, user');
 
         // Check if the innerHTML is updated as expected
         expect(mockedElement.innerHTML).toBe('Hello, user!');
